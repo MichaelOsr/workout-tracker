@@ -43,6 +43,7 @@ app.get('/api/health', async (req, res) => {
     }
 });
 
+//Gracefull Shutdown
 process.on('SIGTERM', async () => {
     await prisma.$disconnect();
     process.exit(0);
